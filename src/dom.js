@@ -173,10 +173,11 @@ window.dom = {
   /**
    * 选择出符合条件的元素，并返回有其组成的数组
    * @param {string} selector css选择器
+   * @param {HTMLElement} [scope] 可选参数，要查找元素的所属元素
    * @returns {HTMLElement[]} 符合条件的元素组成的数组
    */
-  find(selector) {
-    return document.querySelectorAll(selector)
+  find(selector, scope) {
+    return (scope || document).querySelectorAll(selector)
   },
   /**
    * 获取父节点
